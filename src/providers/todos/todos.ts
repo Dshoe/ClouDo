@@ -6,9 +6,12 @@ import 'rxjs/add/operator/map';
 export class TodosProvider {
 
   db: any;
+  remote: any;
 
   constructor(public http: Http) {
     this.db = new PouchDB('cloudo');
+
+    this.remote = 'http://localhost:5984/cloudo';
   }
 
 }
