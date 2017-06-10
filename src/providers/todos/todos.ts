@@ -59,6 +59,12 @@ export class TodosProvider {
     });
   }
 
+  deleteTodo(todo) {
+    this.db.remove(todo).catch((err) => {
+      console.log(err);
+    })
+  }
+
   handleChange(change) {
     let changedDoc = null;
     let changedIndex = null;
