@@ -12,6 +12,14 @@ export class TodosProvider {
     this.db = new PouchDB('cloudo');
 
     this.remote = 'http://localhost:5984/cloudo';
+
+    let options = {
+      live: true,
+      retry: true,
+      continuous: true
+    };
+
+    this.db.sync(this.remote, options);
   }
 
 }
