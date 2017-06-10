@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class TodosProvider {
+export class TasksProvider {
 
   data: any;
   db: any;
@@ -23,7 +23,7 @@ export class TodosProvider {
     this.db.sync(this.remote, options);
   }
 
-  getTodos() {
+  getTasks() {
     if (this.data) {
       return Promise.resolve(this.data);
     }
@@ -49,18 +49,18 @@ export class TodosProvider {
     })
   }
 
-  createTodo(todo) {
-    this.db.post(todo);
+  createTask(task) {
+    this.db.post(task);
   }
 
-  updateTodo(todo) {
-    this.db.put(todo).catch((err) => {
+  updateTask(task) {
+    this.db.put(task).catch((err) => {
       console.log(err);
     });
   }
 
-  deleteTodo(todo) {
-    this.db.remove(todo).catch((err) => {
+  deleteTask(task) {
+    this.db.remove(task).catch((err) => {
       console.log(err);
     })
   }

@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { TodosProvider } from '../providers/todos/todos';
+import { TasksProvider } from '../providers/tasks/tasks';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { TodosProvider } from '../providers/todos/todos';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TodosProvider
+    TasksProvider
   ]
 })
 export class AppModule {}
