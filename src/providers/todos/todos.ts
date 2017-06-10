@@ -49,6 +49,10 @@ export class TodosProvider {
     })
   }
 
+  createTodo(todo) {
+    this.db.post(todo);
+  }
+
   handleChange(change) {
     let changedDoc = null;
     let changedIndex = null;
