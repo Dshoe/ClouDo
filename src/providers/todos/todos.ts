@@ -53,6 +53,12 @@ export class TodosProvider {
     this.db.post(todo);
   }
 
+  updateTodo(todo) {
+    this.db.put(todo).catch((err) => {
+      console.log(err);
+    });
+  }
+
   handleChange(change) {
     let changedDoc = null;
     let changedIndex = null;
